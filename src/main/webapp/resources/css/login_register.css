@@ -1,0 +1,52 @@
+/*所有的样式皆在login_box下*/
+#login_box, #register_box{
+	display: none;
+	width: 460px;
+	height: 525px;
+	border: 2px solid #fff; 
+	background: url(../images/index/sign1.png) no-repeat;
+	background-color: #c4eafc;
+	background-position: top center;
+	position: absolute;
+	left: 50%;
+	top:100px;
+	margin-left: -230px;
+}
+#login_box form, #register_box form{
+	width: 460px;
+	height: 300px;
+	margin-top: 225px;
+	overflow: hidden;
+}
+#login_box form table, #register_box form table{
+	width: 400px;
+	height: 150px;
+	margin: 70px auto 10px;
+}
+#login_box form table td.left, #register_box form table td.left{
+	text-align: center;
+	font-size: 20px;
+	color: #fff;
+	width: 25%;
+}
+#login_box form input, #register_box form input{
+	border: 2px solid #fff;	
+	outline: none;
+	font-size: 20px;
+	color: #fff;
+}
+#login_box form table td.right input, #register_box form table td.right input{
+	width: 275px;
+	height: 35px;
+	background: none;
+}
+#login_box input[type='submit'], #register_box input[type='submit']{
+	display: block;
+	width: 115px;
+	height: 35px;
+	margin: 0 auto;
+	background: #cb92c0;
+}
+#login_box input[type='submit']:hover, #register_box input[type='submit']:hover{
+	background: #ef7fd9;
+}

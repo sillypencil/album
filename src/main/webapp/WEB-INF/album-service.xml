@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        ">
+
+    <bean id="imageService" class="com.bing.image.ImageService">
+        <property name="webPath" value="./src/main/webapp/resources/images/"/>
+        <property name="compressWidth" value="200"/>
+        <property name="compressHeight" value="200"/>
+    </bean>
+
+    <bean id="userService" class="com.bing.user.UserService">
+        <property name="webPath" value="./src/main/webapp/resources/images/"/>
+        <property name="compressWidth" value="200"/>
+        <property name="compressHeight" value="200"/>
+    </bean>
+
+</beans>
