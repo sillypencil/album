@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.Image">
+    <resultMap id="image_type" type="com.bing.image.Image">
+        <id property="id" column="id"/>
+        <result property="imagePath" column="imagePath"/>
+        <result property="favorNum" column="favorNum"/>
+        <result property="collectNum" column="collectNum"/>
+        <result property="ownAlbumId" column="ownAlbumId"/>
+        <result property="createTime" column="createTime"/>
+        <result property="permission" column="permission"/>
+        <result property="filterType" column="filterType"/>
+        <association property="album" javaType="com.bing.image.Album" column="ownAlbumId"
+                     select="mapper.Album.getAlbumById"/>
+    </resultMap>
+
+    <resultMap id="simple_image_result" type="com.bing.info.SimpleImageResult">
+        <result property="userId" column="userId"/>
+        <association property="image" javaType="com.bing.image.Image" column="imageId"
+                     select="mapper.Image.getImageById"/>
+    </resultMap>
+
+    <select id="getCoverByAlbum" parameterType="int" resultType="com.bing.image.Image">
+        select * from image where ownAlbumId = #{id} and isRemove = 0 limit 1
+    </select>
+
+    <select id="getImageById" parameterType="int" resultMap="image_type">
+        select * from image where id = #{id} and isRemove = 0
+    </select>
+    
+    <select id="getCollectImageIdsByUserId" parameterType="int" resultMap="simple_image_result">
+        select * from user_collect_image where userId = #{userId}
+    </select>
+
+    <select id="getFavorImageIdsByUserId" parameterType="int" resultMap="simple_image_result">
+        select * from user_favor_image where userId = #{userId}
+    </select>
+
+    <select id="getImagesByAlbumId" parameterType="int" resultMap="image_type">
+        select * from image where ownAlbumId = #{ownAlbumId} and isRemove = 0
+    </select>
+
+    <select id="getPermissionImages" resultMap="image_type" parameterType="com.bing.image.Permission">
+        select * from image where permission = #{permission} and isRemove = 0
+    </select>
+    
+    <select id="getPermissionImagesByAlbumId" parameterType="com.bing.info.PermissionInfo" resultMap="image_type">
+        select * from image where ownAlbumId = #{id} and permission = #{permission} and isRemove = 0
+    </select>
+
+    <select id="getPermissionImagesByUserId" parameterType="com.bing.info.PermissionInfo" resultMap="image_type">
+        select * from image where ownUserId = #{id} and permission = #{permission} and isRemove = 0
+    </select>
+
+    <select id="getMyImagesByAlbumId" parameterType="int" resultMap="image_type">
+        select * from image where ownAlbumId = #{userId} and isRemove = 0
+    </select>
+
+    <select id="getMyImages" parameterType="int" resultMap="image_type">
+        select * from image where ownUserId = #{userId} and isRemove = 0
+    </select>
+
+    <insert id="addImage" parameterType="com.bing.image.Image">
+        insert into image(
+            imagePath, ownAlbumId, permission, ownUserId, filterType
+        ) value(
+            #{imagePath}, #{ownAlbumId}, #{permission}, #{ownUserId}, #{filterType}
+        )
+    </insert>
+
+    <!--<delete id="removeImageById" parameterType="map">-->
+        <!--delete from image where id = #{id} and ownUserId = #{userId}-->
+    <!--</delete>-->
+
+    <update id="removeImageById" parameterType="map">
+        update image set
+        isRemove = 1
+        where id = #{id} and ownUserId = #{userId} and isRemove = 0
+    </update>
+
+    <update id="removeImagesByAlbumId" parameterType="int">
+        update image set
+        isRemove = 1
+        where ownAlbumId = #{albumId} and isRemove = 0
+    </update>
+
+    <insert id="favor" parameterType="map">
+        insert into user_favor_image(
+            userId, imageId
+        ) value(
+            #{userId}, #{imageId}
+        )
+    </insert>
+
+    <delete id="cancelFavor" parameterType="map">
+        delete from user_favor_image where userId = #{userId} and imageId = #{imageId}
+    </delete>
+
+    <update id="favorNumIncrement" parameterType="map">
+        update image i1 join image i2 on i1.id = i2.id set
+        i1.favorNum = i2.favorNum + 1
+        where i1.id = #{imageId} and i1.ownUserId != #{userId}
+    </update>
+
+    <update id="favorNumDecrease" parameterType="map">
+        update image i1 join image i2 on i1.id = i2.id set
+        i1.favorNum = i2.favorNum - 1
+        where i1.id = #{imageId} and i1.ownUserId != #{userId}
+    </update>
+
+    <insert id="collect" parameterType="map">
+        insert into user_collect_image(
+        userId, imageId
+        ) value(
+        #{userId}, #{imageId}
+        )
+    </insert>
+
+    <delete id="cancelCollect" parameterType="map">
+        delete from user_collect_image where userId = #{userId} and imageId = #{imageId}
+    </delete>
+
+    <update id="collectNumIncrement" parameterType="map">
+        update image i1 join image i2 on i1.id = i2.id set
+        i1.collectNum = i2.collectNum + 1
+        where i1.id = #{imageId} and i1.ownUserId != #{userId}
+    </update>
+
+    <update id="collectNumDecrease" parameterType="map">
+        update image i1 join image i2 on i1.id = i2.id set
+        i1.collectNum = i2.collectNum - 1
+        where i1.id = #{imageId} and i1.ownUserId != #{userId}
+    </update>
+
+    <update id="changeAlbum" parameterType="com.bing.image.Image">
+        update image set
+        ownAlbumID = #{ownAlbumId}
+        where id = #{id}
+    </update>
+
+</mapper>

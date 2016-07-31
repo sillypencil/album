@@ -1,0 +1,50 @@
+		<h1>上传采集</h1>
+		<a href="#" id="close_btn">x</a>
+		<form action="" method="post" id="image_upload_form">
+			<div id="select_pic">
+				<img src="../../resources/imagesimages/pic/11.jpg" alt="更换图片">
+				<input type="file" name="">
+			</div>
+			
+			<div id="image_process_option">
+				<select name="album_name">
+					<option value=null>请选择相册</option>
+					<option value="">相册1</option>
+					<option value="">相册2</option>
+				</select>
+				<p>
+					<radio name="permission">仅自己可见</radio>
+					<radio name="permission">全部好友可见</radio>
+					<radio name="permission">全站可见</radio>
+				</p>
+				
+				<div id="image_beautify_box">
+					<p>一键美图</p>
+					<ul id="beaautify_btns">
+						<li>
+							<radio name="filterType" value="DEFAULT"><a href="javscript:void();" id="beautify_default_btn">原图</a></radio>
+						</li>
+						<li>
+							<radio name="filterType" ><a href="javscript:void();" id="beautify_auto_btn" value="AUTO">自动</a></radio>
+						</li>
+						<li>
+							<radio name="filterType" value="PERSON"><a href="javscript:void();" id="beautify_people_btn">人物</a></radio>
+						</li>
+						<li>
+							<radio name="filterType" value="FOOD"><a href="javscript:void();" id="beautify_food_btn">美食</a></radio>
+						</li>
+						<li>
+							<radio name="filterType" value="STATIC"><a href="javscript:void();" id="beautify_static_btn">静物</a></radio>
+						</li>
+						<li>
+							<radio name="filterType" value="VIEW"><a href="javscript:void();" id="beautify_view_btn">风景</a></radio>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<p>
+
+				<input type="submit" value="采下来">
+				<input type="button" value="取消">
+			</p>
+		</form>

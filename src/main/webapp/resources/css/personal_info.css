@@ -1,0 +1,129 @@
+#personal_info{
+	height: 263px;
+	min-width: 600px;
+	position: relative;
+	margin: 40px 30px 0 30px;
+	background: #fff;
+	border-radius:3px;
+	-moz-webkit-border-radius:3px;
+	-ms-webkit-border-radius:3px;
+	-o-webkit-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow: 0 0 7px #666;
+	-moz-box-shadow: 0 0 7px #666;
+	-ms-moz-box-shadow: 0 0 7px #666;
+	-o-moz-box-shadow: 0 0 7px #666;
+	-webkit-box-shadow:0 0 7px #666;
+
+}
+#personal_info .left{
+	float: left;
+	height: 100%;
+	position: relative;
+}
+#personal_info .left .head-container{
+	width: 280px;
+	height: 184px;
+	position: absolute;
+	/*background: #eee;*/
+	left: 30px;
+	top: -30px;
+}
+#personal_info .left .head-container:before{
+	content: '';
+	display: block;
+	width: 184px;
+	height: 30px;
+	background: #fff;
+	top:0;
+	left:0;
+	-webkit-box-shadow:0 0 7px #666 ;
+	-moz-box-shadow:0 0 7px #666 ;
+	-ms-box-shadow:0 0 7px #666 ;
+	-o-box-shadow:0 0 7px #666 ;
+	box-shadow:0 0 7px #666 ;
+}
+#personal_info .left .head-container>img{
+	width: 164px;
+	height: 164px;
+	border: 10px solid #fff;
+	background: #fff;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+#personal_info .left .head-container #username{
+	display: block;
+	position: absolute;
+	left:200px;
+	top:75px;
+	height: 34px;
+	line-height: 35px;
+	font-size: 25px;
+}
+#personal_info .left .num-container{
+	position: absolute;
+	width: 185px;
+	bottom: 35px;
+	left:45px;
+}
+#personal_info .left .num-container a{
+	display: block;
+	width: 70px;
+	height: 70px;
+	margin-right: -1px;
+	float: left;
+	border:1px solid #f5f6f3;
+}
+
+#personal_info .right{
+	float: right;
+}
+#personal_info .right #modify_info_btn{
+	margin:30px 20px 0 0;
+	display:block;
+	width:85px;
+	height:30px;
+	background:#f7f7f7;
+	text-align:center;
+	line-height:30px;
+	color:#000;
+	border-radius:3px;
+	border:1px solid #999;
+}
+#personal_info .right #modify_info_btn:hover{
+	background:#eee;
+	text-decoration:none;
+}
+
+
+#personal_info #personal_info_footer{
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	clear: both;
+	background: #f5f6f3;
+	position: absolute;
+	bottom: 0;
+}
+#personal_info #personal_info_footer .nav{
+	float: left;
+	margin-left: 10px;
+}
+#personal_info #personal_info_footer .nav a{
+	display: inline-block;
+	*display: inline;
+	_display:inline;
+	*zoom:1;
+	width: 50px;
+	height: 35px;
+	font-size: 15px;
+	text-align: center;
+}
+
+#personal_info #personal_info_footer #album_name{
+	float: right;
+	margin-right: 30px;
+	font-size: 22px;
+	font-weight: bold;
+}

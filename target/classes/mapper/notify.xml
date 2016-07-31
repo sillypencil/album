@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.Notify">
+    <resultMap id="notify_type" type="com.bing.user.Notify">
+        <id property="id" column="id"/>
+        <result property="notifyType" column="notifyType"/>
+        <result property="notifyContentId" column="notifyContentId"/>
+        <result property="notifyUserId" column="notifyUserId"/>
+        <result property="notifiedUserId" column="notifiedUserId"/>
+        <result property="createTime" column="createTime"/>
+        <result property="isRemove" column="isRemove"/>
+        <association property="notifyUser" javaType="com.bing.user.User" column="notifyUserId"
+                     select="mapper.User.getUserById"/>
+    </resultMap>
+
+    <insert id="addNotify" parameterType="com.bing.user.Notify">
+        insert into notify(
+        notifyContentId, notifyUserId, notifiedUserId, notifyType
+        ) value(
+        #{notifyContentId}, #{notifyUserId}, #{notifiedUserId}, #{notifyType}
+        )
+    </insert>
+    
+    <select id="getNotifiesByUserId" parameterType="int" resultMap="notify_type">
+        select * from notify where notifiedUserId = #{userId} and isRemove = 0
+    </select>
+
+    <select id="getNotifyNumByUserId" parameterType="int" resultType="java.lang.Integer">
+        select count(*) from notify where notifiedUserId = #{userId} and isRemove = 0
+    </select>
+
+    <update id="removeNotifiesByUserId" parameterType="int">
+        update notify set
+        isRemove = 1
+        where notifiedUserId = #{userId}
+    </update>
+</mapper>

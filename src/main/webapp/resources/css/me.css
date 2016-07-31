@@ -1,0 +1,194 @@
+@import url(init.css);
+@import url(top.css);
+@import url(waterfall.css);
+@import url(personal_info.css);
+@import url(create_album_box.css);
+@import url(modify_info_box.css);
+@import url(image_process_box.css);
+
+
+/*-------------------------*/
+
+body{
+	background: #ecede8;
+}
+ #fans,#follow, #upload_box,#modify_info_box{
+ 	display:none;
+ }
+
+#all_collect .adding_photo_btn{
+	display: block;
+	margin-left: 10px;
+	width: 196px;
+	height: 140px;
+	border: 2px dashed #e0e0e0;
+	background: #fff;
+}
+#fans,#follow,#album{
+	margin: 0 30px 50px;
+	min-height:450px;
+	*height:450px;
+	_height:450px;
+}
+#fans>p,#follow>p{
+	height: 50px;
+	line-height: 50px;
+	color: #b9b9b9;
+	font-size: 18px;
+	padding-left: 20px;
+	border-bottom: 1px solid #ddd;
+	-webkit-box-shadow: 0 1px 0 #f5f5f5;
+	-moz-box-shadow: 0 1px 0 #f5f5f5;
+	-ms-box-shadow: 0 1px 0 #f5f5f5;
+	-o-box-shadow: 0 1px 0 #f5f5f5;
+	box-shadow: 0 1px 0 #f5f5f5;
+}
+#fans ul,#follow ul,#album ul{
+
+	margin-top: 40px;
+}
+#fans ul li,#follow ul li{
+	display: inline-block;
+	*display: inline;
+	_display:inline;
+	*zoom:1;
+	width: 280px;
+	height: 380px;
+	border: 2px solid #fff;
+	background: #cecece;
+	margin: 0 15px 15px;
+}
+
+#fans ul li a.head-link,#follow ul li a.head-link{
+	display: block;
+	width: 180px;
+	height: 180px;
+	margin: 30px auto 0;
+	border: 2px solid #fff;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+	border-radius:50%;
+	background: #df9696;
+	overflow: hidden;
+}
+
+#fans ul li a img,#follow ul li a img{
+	width: 100%;
+	height:100%;
+}
+#fans ul li .nickname,#follow ul li .nickname{
+	display: block;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	color: #fff;
+	margin-top: 10px;
+	text-align: center;
+}
+#fans ul li .follow-btn,#follow ul li .follow-btn,#fans ul li .cancel-follow-btn,#follow ul li .cancel-follow-btn{
+	display: block;
+	width: 180px;
+	height: 38px;
+	line-height: 38px;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	background: #ecede8;
+	margin: 40px auto 0;
+}
+
+#album ul li{
+	position:relative;
+	display: block;
+	float:left;
+	margin:0 40px 20px 0;
+	width: 280px;
+	height: 380px;
+	background:#fff;
+	box-shadow:0 0 10px #888;
+}
+#album ul li a{
+	display: block;
+	margin:10px;
+	width:260px;
+	height:360px;
+}
+#album ul li a img{
+	width: 100%;
+	height:100%;
+}
+#album ul li p{
+	position:absolute;
+	bottom:20px;
+	left:20px;
+	color:#fff;
+	font-weight:bold;
+}
+#album ul li span{
+	position: absolute;
+	top:20px;
+	left:20px;
+	font-size:16px;
+	color:#fff;
+	font-weight:bold;
+}
+
+#album #adding_album{
+	background:#f7f7f5;
+}
+#adding_album_btn{
+	display: block;
+	margin:5% auto;
+	width: 85%;
+	height: 90%;
+	background: url(../../resources/images/me/adding_album.png) no-repeat;
+	background-position:center center;
+	text-decoration: none;
+	border:1px dashed #dedede;
+}
+
+#upload_box,#modify_head_box, #create_album_box{
+	position: absolute;
+	left: 50%;
+	top: 80px;
+	width: 640px;
+	height: 370px;
+	margin-left: -320px;
+	z-index: 10;
+	background:#fff;
+	box-shadow:0 0 5px #333;
+	display: none;
+}
+#modify_psw_box{
+	display: none;
+}
+
+#image_upload_form #select_photo{
+	float: left;
+	position: relative;
+	margin: 15px 15px 15px 20px;
+	display: block;
+	width: 190px;
+	height:190px;
+	/*background: pink;*/
+	overflow: hidden;
+}
+#select_photo>input[type="file"]{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	-webkit-opacity:0 ;
+	-moz-opacity:0 ;
+	-ms-opacity:0 ;
+	-o-opacity:0 ;
+	opacity:0 ;
+}
+#select_photo>img{
+	width: 190px;
+	height: auto;
+}

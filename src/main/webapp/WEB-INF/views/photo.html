@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="../../resources/css/photo.css">
+	<script src='../../resources/js/jquery-2.1.3.min.js'></script>
+	<script src='../../resources/js/imagesloaded.pkgd.min.js'></script>
+	<script src='../../resources/js/masonry.pkgd.min.js'></script>
+	<script src='../../resources/js/waterfall.js'></script>
+</head>
+<body>
+	<div id='top'>
+		<!--@import top.html-->
+	</div>
+
+	<div id='main_container'>
+		<div id='next_btn'></div>
+		<div id='pre_btn'></div>
+		<a href="javascript:void(0);" id='left_arrow'></a>
+		<a href="javascript:void(0);" id='right_arrow'></a>
+		<div class='left'>
+			<div id='show_photo'>
+				<img src="../../resources/images/pic/11.jpg">
+				<div class='btns'>
+					<a href="javascript:;" id='collect'>采集</a>
+					<a href="javascript:;" id='like'>喜欢</a>
+					<a href="javascript:;" id='recommend'>评论</a>
+				</div>
+			</div>
+
+			<div id='add_comment'>
+				<div id='info'>
+					<a href="#">
+						<img src="../../resources/images/top/me_btn.png" alt="">
+					</a>
+					<span id='nickname'>昵称</span>
+					<span id='time'>YYYY/MM/DD</span>
+				</div>
+				<div id='my_comment'>
+					<form action="" method="comment_form">
+						<textarea name="" id="" cols="30" rows="5">
+							我的评论
+						</textarea>
+						<input type="submit" value="评论">
+					</form>
+				</div>
+			</div>
+			
+			<div id='comments'>
+				<ul>
+					<li>
+						<p>这是评论</p>
+						<a href="javascript:void(0);" id="reply_btn">回复</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class='right'>
+			
+			<div id='album_info'>
+				<div>
+					<h1>相册名</h1>
+					<h2>相册简介</h2>
+				</div>
+			</div>
+			<div id='waterfall'>
+				<ul>
+					<li><a href=""><img src="../../resources/images/pic/10.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/11.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/1.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/2.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/3.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/5.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/4.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/11.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/6.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/7.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/8.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/9.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/10.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/9.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/8.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/7.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/6.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/5.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/11.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/4.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/3.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/2.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/1.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/11.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/10.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/9.jpg" alt=""></a></li>
+					<li><a href=""><img src="../../resources/images/pic/8.jpg" alt=""></a></li>	
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+	<script src='../../resources/js/photo.js'></script>
+</body>
+</html>
